@@ -2,9 +2,10 @@ let myData = [];
 
 class LowLevelStorage {
 
-    get(key, callback) {
+    async get(key, callback) {
         let error = null;
         let response = null;
+
         try {
 
             myData.map((data, index, array) => {
@@ -22,10 +23,11 @@ class LowLevelStorage {
 
     }
 
-    put(key, value, callback) {
+    async put(key, value, callback) {
         let error = null;
         let response = null;
         let overRide = false;
+        
         try {
             if (key == null || value == null || key == '' || value == '') error = "Invalid Data";
             else {
@@ -47,7 +49,7 @@ class LowLevelStorage {
         callback(error, response);
     }
 
-    del(key, callback) {
+    async del(key, callback) {
         let error = null;
         let response = null;
 

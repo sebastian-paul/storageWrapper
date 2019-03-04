@@ -35,7 +35,7 @@ npm install mocha
 ```
 
 ```
- npm test
+ mocha
 
 ```
 

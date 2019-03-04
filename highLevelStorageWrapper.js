@@ -3,11 +3,11 @@ class HighLevelStorageWrapper {
 
     wrap(lowLevelStorage) {
 
-        let get = (key) => {
+        let get = async function (key) {
 
-            return new Promise((resolve, reject) => {
+            return new Promise(async (resolve, reject) => {
 
-                lowLevelStorage.get(key, (err, data) => {
+                await lowLevelStorage.get(key, (err, data) => {
                     if (err) reject(err);
                     else resolve(data);
                 });
@@ -15,11 +15,11 @@ class HighLevelStorageWrapper {
 
         }
 
-        let put = (key, value) => {
+        let put = async function (key, value) {
 
-            return new Promise((resolve, reject) => {
+            return new Promise(async (resolve, reject) => {
 
-                lowLevelStorage.put(key, value, (err, data) => {
+                await lowLevelStorage.put(key, value, (err, data) => {
                     if (err) reject(err);
                     else resolve(data);
                 });
@@ -27,22 +27,22 @@ class HighLevelStorageWrapper {
 
         }
 
-        let del = (key) => {
+        let del = async function (key) {
 
-            return new Promise((resolve, reject) => {
+            return new Promise(async (resolve, reject) => {
 
-                lowLevelStorage.del(key, (err, data) => {
+                await lowLevelStorage.del(key, (err, data) => {
                     if (err) reject(err);
                     else resolve(data);
                 });
             });
         }
 
-        let batchPut = (input) => {
+        let batchPut = async function (input) {
 
-            return new Promise((resolve, reject) => {
-                input.map((data, index, arr) => {
-                    lowLevelStorage.put(data.key, data.value, (err, data) => {
+            return new Promise(async (resolve, reject) => {
+                input.map(async (data, index, arr) => {
+                    await lowLevelStorage.put(data.key, data.value, (err, data) => {
                         if (err) reject(err);
                         else resolve("Batch data added successfully");
                     });
