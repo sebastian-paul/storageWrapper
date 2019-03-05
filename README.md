@@ -28,21 +28,21 @@ Implemented the wrap function above
 Written a lowLevelStorage mock, and test 
 
 
-### For unit test using mocha
-
-```
-npm install mocha
-```
-
-```
- mocha
-
-```
-
 
 ### Start app 
+```
+npm install
 
 ```
- npm start
+
+```
+npm start
+
+```
+
+### Test app  using mocha
+
+```
+npm test
 
 ```

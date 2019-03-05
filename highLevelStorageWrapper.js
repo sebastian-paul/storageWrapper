@@ -3,7 +3,7 @@ class HighLevelStorageWrapper {
 
     wrap(lowLevelStorage) {
 
-        let get = async function (key) {
+        let get = function (key) {
 
             return new Promise(async (resolve, reject) => {
 
@@ -15,7 +15,7 @@ class HighLevelStorageWrapper {
 
         }
 
-        let put = async function (key, value) {
+        let put = function (key, value) {
 
             return new Promise(async (resolve, reject) => {
 
@@ -27,7 +27,7 @@ class HighLevelStorageWrapper {
 
         }
 
-        let del = async function (key) {
+        let del = function (key) {
 
             return new Promise(async (resolve, reject) => {
 
@@ -38,7 +38,7 @@ class HighLevelStorageWrapper {
             });
         }
 
-        let batchPut = async function (input) {
+        let batchPut = function (input) {
 
             return new Promise(async (resolve, reject) => {
                 input.map(async (data, index, arr) => {

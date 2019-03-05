@@ -6,8 +6,8 @@ const highLevelStorage = wrap(lowLevelStorage);
 describe('HighLevelStorage: Wrapped Callback with promises | Unit test', async () => {
 
   describe('put a sample data', async () => {
-    await it('should return Data added  successfully', async () => {
-      highLevelStorage.put('testKey', 'test Value').then((data) => {
+    it('should return Data added  successfully', async () => {
+      await highLevelStorage.put('testKey', 'test Value').then((data) => {
         assert.strictEqual(data, 'Data added  successfully');
         assert.notEqual(data, null);
       }).catch((err) => {
@@ -17,8 +17,8 @@ describe('HighLevelStorage: Wrapped Callback with promises | Unit test', async (
   });
 
   describe('put a null data', async () => {
-    await it('should return error', async () => {
-      highLevelStorage.put(null, null).then((data) => {
+    it('should return error', async () => {
+      await highLevelStorage.put(null, null).then((data) => {
         assert.strictEqual(data, null);
       }).catch((err) => {
         assert.notEqual(err, null);
@@ -37,8 +37,8 @@ describe('HighLevelStorage: Wrapped Callback with promises | Unit test', async (
   });
 
   describe('get a valid data', async () => {
-    await it('should return Data value', async () => {
-      highLevelStorage.get('testKey').then((data) => {
+    it('should return Data value', async () => {
+      await highLevelStorage.get('testKey').then((data) => {
         assert.notEqual(data, null);
       }).catch((err) => {
         assert.strictEqual(err, null);

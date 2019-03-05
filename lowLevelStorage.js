@@ -1,3 +1,4 @@
+"use strict";
 let myData = [];
 
 class LowLevelStorage {
@@ -27,7 +28,7 @@ class LowLevelStorage {
         let error = null;
         let response = null;
         let overRide = false;
-        
+
         try {
             if (key == null || value == null || key == '' || value == '') error = "Invalid Data";
             else {

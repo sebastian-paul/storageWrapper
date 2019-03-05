@@ -1,0 +1,24 @@
+{
+  "name": "storagewrapper",
+  "version": "1.0.0",
+  "description": "Have an object lowLevelStorage with the following methods:",
+  "main": "app.js",
+  "scripts": {
+    "start":"node app.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianpaulp/storageWrapper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastianpaulp/storageWrapper/issues"
+  },
+  "homepage": "https://github.com/sebastianpaulp/storageWrapper#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  }
+}
